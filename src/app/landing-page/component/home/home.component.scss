@@ -1,0 +1,127 @@
+@keyframes fade {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.home {
+  @apply p-6;
+  .slider {
+    @apply text-white mt-12 lg:mt-2 relative ;
+    .wrap-img {
+      @apply lg:flex xl:gap-40 justify-between w-full rounded-2xl  px-6 lg:px-10 lg:gap-20;
+      .slider-left {
+        @apply px-6 xl:w-3/5 mb-12 lg:w-5/6;
+        .slider-title {
+          @apply xl:text-4xl font-bold mb-4 mt-12 pt-4 lg:text-2xl;
+        }
+        .slider-description {
+          @apply xl:text-lg font-light mb-4 lg:text-base;
+        }
+        .btn {
+          @apply rounded-full border-2 border-white py-2 px-4 mb-4;
+          transition: all .2s linear;
+          &:hover {
+            @apply text-orange-500 bg-white;
+
+          }
+        }
+      }
+      .slider-right {
+        @apply hidden lg:block lg:flex items-center;
+        .slider-img {
+          @apply  md:h-2/3 xl:h-full;
+        }
+      }
+    }
+    .arrow {
+      @apply absolute top-1/2 text-4xl shadow-2xl bg-white text-black w-10  h-10 rounded-full
+      flex justify-center items-center border cursor-pointer hidden md:flex z-10;
+      transform: translateY(-50%);
+      .icon {
+        @apply text-base;
+      }
+    }
+    .arrow-left {
+      @apply -left-3;
+    }
+    .arrow-right {
+      @apply -right-3;
+    }
+  }
+  .slick-dots {
+    @apply flex mt-4 ml-7;
+    .slick-dot {
+      @apply py-1 w-7 rounded-full bg-gray-300 mr-1 cursor-pointer;
+      transition: all .6s linear;
+    }
+    .active {
+      @apply px-7 bg-gray-600;
+    }
+  }
+  .list-combined-course {
+    @apply md:px-6 px-1;
+    .item-combined-course{
+      @apply mt-10;
+      .heading-combined-course {
+        @apply flex justify-between;
+        .combined-course-title{
+          @apply md:text-3xl font-black mb-10 inline-block relative text-xl;
+          .label-title {
+            @apply bg-blue-500 px-1 text-base font-medium rounded text-white absolute top-1 -right-10;
+          }
+        }
+        .detail-course {
+          @apply text-orange-500 cursor-pointer hidden lg:block;
+          .detail-title {
+            @apply mr-1 text-base;
+          }
+          .detail-icon {
+            transition: all .25s linear;
+          }
+          &:hover .detail-title{
+            text-decoration: underline;
+          }
+          &:hover .detail-icon {
+            transform: translateX(2px);
+          }
+        }
+      }
+      .list-course {
+        @apply lg:grid grid-cols-4 gap-6 flex snap-x overflow-x-auto;
+        .item-course {
+          @apply rounded-2xl snap-start flex-shrink-0 w-2/3 lg:w-full;
+          .frame-img {
+            @apply relative cursor-pointer;
+            .img-course {
+              @apply w-full rounded-2xl;
+            }
+            .continue-course {
+              @apply absolute top-0 bottom-0 left-0 right-0 bg-black/[.6] flex justify-center items-center rounded-2xl hidden;
+              .btn {
+                @apply py-2 px-4 bg-white text-black rounded-full font-medium;
+              }
+            }
+
+            &:hover .continue-course{
+              @apply xl:flex;
+              animation: fade .3s linear;
+            }
+          }
+          .course-title {
+            @apply text-lg mt-2 font-bold cursor-pointer;
+          }
+          .icon-group {
+            @apply mt-2 text-gray-500;
+            .quantity-people {
+              @apply ml-1;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

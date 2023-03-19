@@ -1,0 +1,40 @@
+.side-nav {
+  @apply z-50;
+  .right-sidenav {
+    @apply w-2/3 fixed top-0 bottom-0 lg:hidden text-gray-500 px-4;
+    .infor {
+      @apply flex flex-col items-center px-6 mt-6;
+      .avatar-infor {
+        @apply w-20 rounded-full mb-2;
+      }
+      .title {
+        @apply text-base font-bold text-black;
+      }
+    }
+    .my-course {
+      @apply flex items-center px-6 py-6 border-b my-4;
+      .course-icon {
+        @apply text-xl;
+      }
+      .my-course_title {
+        @apply ml-4 text-lg;
+      }
+    }
+    .list-menu {
+      @apply border-b px-6;
+      .menu-item {
+        @apply flex items-center py-2;
+        .menu-link {
+          @apply text-xl mr-4;
+        }
+      }
+    }
+    .sign-out {
+      @apply px-6 border-b flex items-center py-6;
+      .sign-out_title {
+        @apply ml-4;
+      }
+    }
+  }
+}
+

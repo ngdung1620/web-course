@@ -1,0 +1,26 @@
+<mat-sidenav-container class="side-nav">
+  <mat-sidenav #rightSidenav mode="over" class="right-sidenav" (openedChange)="toggleSideNav($event)" [opened] ="isSideNav" position="start">
+    <div class="infor">
+      <img src="./assets/img/img.png" alt="" class="avatar-infor">
+      <span class="title">Nguyễn Văn Dũng</span>
+    </div>
+    <div class="my-course">
+      <i class="fa-solid fa-book-open course-icon"></i>
+      <h1 class="my-course_title">Khóa học của tôi</h1>
+    </div>
+    <div class="list-menu">
+      <div class="menu-item" *ngFor="let item of listMenu" [class.active]="elementActive === item.name" (click)="handleClick(item.name)">
+        <i class="{{item.icon}} menu-link"></i>
+        <h3 class="title">{{item.name}}</h3>
+      </div>
+    </div>
+    <div class="sign-out">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      <div class="sign-out_title">Đăng xuất</div>
+
+    </div>
+  </mat-sidenav>
+  <app-content></app-content>
+</mat-sidenav-container>
+
+

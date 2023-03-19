@@ -1,0 +1,31 @@
+<div class="content">
+  <h1 class="content-title">Đăng nhập vào F8</h1>
+  <form class="form" [formGroup]="dataForm" (submit)="handleSubmit()">
+    <div class="form-group">
+      <h1 class="form-label">Tên đăng nhập</h1>
+      <input type="text" name="" formControlName="userName" class="form-input">
+    </div>
+    <div class="form-group">
+      <h1 class="form-label">Mật khẩu</h1>
+      <input type="password" name="" formControlName="password" class="form-input">
+    </div>
+   <div class="form-btn"><button class="btn">Đăng nhập</button></div>
+  </form>
+  <h1 class="content-other">Or</h1>
+  <div class="btn-group">
+    <img class="google-icon" src="https://play-lh.googleusercontent.com/aFWiT2lTa9CYBpyPjfgfNHd0r5puwKRGj2rHpdPTNrz2N9LXgN_MbLjePd1OTc0E8Rl1" alt="">
+    <h1>Đăng nhập với Google</h1>
+  </div>
+  <div class="btn-group">
+    <i class="fa-brands fa-facebook facebook-icon"></i>
+    <h1>Đăng nhập với Facebook</h1>
+  </div>
+  <div class="btn-group">
+    <i class="fa-brands fa-github github-icon"></i>
+    <h1>Đăng nhập với Github</h1>
+  </div>
+  <h1 class="convert">
+    Bạn chưa có tài khoản?
+    <a routerLink="/login/register" class="convert-register">Đăng ký</a>
+  </h1>
+</div>

@@ -1,0 +1,11 @@
+.wrapper-content {
+  @apply min-h-screen flex justify-center items-center py-8;
+  background-image: url("https://accounts.fullstack.edu.vn/static/media/f8_bg_auth_1920.b517075e98f3051de678.png");
+  .content {
+    @apply bg-white rounded-xl p-8 flex flex-col items-center shadow-2xl;
+    .icon {
+      @apply w-10;
+    }
+
+  }
+}

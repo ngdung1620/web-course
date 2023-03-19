@@ -1,0 +1,54 @@
+<section class="home">
+  <div class="slider">
+    <div class="arrow arrow-left">
+      <i class="fa-solid fa-angle-left icon"></i>
+    </div>
+    <swiper [config]="config" >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide wrap-img" *ngFor="let img of listImg; let i = index" style="{{img.style}}">
+          <div class="slider-left">
+            <h1 class="slider-title">{{img.title}}</h1>
+            <p class="slider-description">{{img.description}}</p>
+            <button class="btn">{{img.titleButton}}</button>
+          </div>
+          <div class="slider-right">
+            <img src="{{img.urlImg}}" alt="" class="slider-img">
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </swiper>
+    <div class=" arrow arrow-right">
+      <i class="fa-solid fa-angle-right icon"></i>
+    </div>
+  </div>
+  <div class="list-combined-course" >
+    <div class="item-combined-course" *ngFor="let combinedCourse of listCombinedCourse">
+      <div class="heading-combined-course">
+        <h1 class="combined-course-title">
+          {{combinedCourse.title}}
+          <span class="label-title">Mới</span>
+        </h1>
+        <div class="detail-course">
+          <a href="" class="detail-title">Xem chi tiết</a>
+          <i class="fa-solid fa-angle-right detail-icon"></i>
+        </div>
+      </div>
+      <div class="list-course">
+        <div class="item-course" *ngFor="let course of combinedCourse.courses">
+          <div class="frame-img" (click)="HandleCourse(course.id)">
+            <img src="{{course.imageUrl}}" class="img-course" alt="">
+            <div class="continue-course">
+              <button class="btn">Học</button>
+            </div>
+          </div>
+          <h2 class="course-title" (click)="HandleCourse(course.id)">{{course.title}}</h2>
+          <div class="icon-group">
+            <i class="fa-solid fa-users"></i>
+            <span class="quantity-people"> 66.679</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,61 @@
+<div class="container">
+  <section class="heading">
+    <div class="heading-left">
+      <i class="fa-solid fa-angle-left" (click)="handleBack()"></i>
+      <a href=""><img src="./assets/img/img.png" alt="" class="heading-icon"></a>
+      <div class="heading-title">{{course.title}}</div>
+    </div>
+    <div class="heading-right">
+      <h1 class="heading-percent">0%</h1>
+      <p class="amount-lesson"><span>0</span>/<span>{{course.lessons.length}}</span> bài học</p>
+      <div class="heading-note">
+        <i class="fa-solid fa-file"></i>
+        <h1 class="note-title">Ghi chú</h1>
+      </div>
+      <div class="heading-tutorial">
+        <i class="fa-solid fa-circle-question"></i>
+        <div class="tutorial-title">Hướng dẫn</div>
+      </div>
+      <i class="fa-solid fa-bars icon-mobile" (click)="toggleSidenav()"></i>
+    </div>
+  </section>
+  <section class="wrap-content">
+    <div class="content">
+      <div class="content-top">
+        <iframe class="video" src="https://www.youtube.com/embed/Wu1dyC_ALiA" title="YouTube video player"
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+                picture-in-picture" allowfullscreen>
+        </iframe>
+      </div>
+      <div class="content-bottom">
+        <div class="bottom-list">
+          <h2 class="bottom-item">Tham gia nhóm <a href="" class="item-link">Học lập trình tại F8</a> trên Facebook để cùng nhau trao đổi trong quá trình học tập ❤️</h2>
+          <h2 class="bottom-item">Các bạn subscribe kênh Youtube <a href="" class="item-link">F8 Official</a> để nhận thông báo khi có các bài học mới nhé ❤️</h2>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="sb-title">
+        <h1 class="sidebar-title">Nội dung khóa học</h1>
+        <i class="fa-solid fa-xmark sb-exit"></i>
+      </div>
+      <ul class="list-lesson">
+        <li class="item-lesson" *ngFor="let item of course.lessons; let i=index">
+          <span>{{i+1}}.</span>{{item.title}}
+        </li>
+      </ul>
+    </div>
+  </section>
+  <div class="sidebar-mobile" *ngIf="isToggleSidenavMobile">
+    <div class="sb-title">
+      <h1 class="sidebar-title">Nội dung khóa học</h1>
+      <i class="fa-solid fa-xmark sb-exit" (click)="toggleSidenav()"></i>
+    </div>
+    <ul class="list-lesson">
+      <li class="item-lesson" *ngFor="let item of course.lessons; let i=index">
+        <span>{{i+1}}.</span>{{item.title}}
+      </li>
+    </ul>
+  </div>
+</div>
+

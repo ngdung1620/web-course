@@ -1,0 +1,93 @@
+<div class="wrap">
+  <div class="heading-page">
+    <i class="fa-solid fa-bars heading-menu" (click)="toggleSideNav()"></i>
+    <div class="right-heading">
+      <img src="./assets/img/img.png" alt="icon page" class="icon">
+      <h2 class="title-heading">Học lập trình để đi làm</h2>
+    </div>
+    <div class="search">
+      <mat-icon class="search-icon">search</mat-icon>
+      <input type="text" name="" class="heading-search" id="" placeholder="Tìm kiếm khóa học, bài viết, video,...">
+    </div>
+    <div class="left-heading">
+      <mat-icon class="search-icon_mobile">search</mat-icon>
+      <h1 class="my-course">Khóa học của tôi</h1>
+      <mat-icon class="notification-heading">notifications</mat-icon>
+      <img src="./assets/img/img.png" alt="" (click)="ToggleAccount()" class="avatar">
+      <div *ngIf="isAccount" class="toggle-account">
+        <div class="infor">
+          <img src="./assets/img/img.png" alt="" class="avatar-infor">
+          <span class="title">Nguyễn Văn Dũng</span>
+        </div>
+        <div class="list-func">
+          <h1 class="item-func">Trang cá nhân</h1>
+          <h1 class="item-func">Cài đặt</h1>
+          <h1 class="item-func">Đăng xuất</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="content-page">
+    <div class="menu-page">
+      <i class="fa-solid fa-circle-plus add-menu"></i>
+      <div class="menu-item" *ngFor="let item of listMenu" [class.active]="elementActive === item.name" (click)="handleClick(item.name)">
+        <i class="{{item.icon}} menu-link"></i>
+        <h3 class="title">{{item.name}}</h3>
+      </div>
+    </div>
+    <div class="container-content">
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+  <section class="footer-page">
+    <div class="infor-footer">
+      <div class="list-footer contact">
+        <div class="item">
+          <div class="title">
+            <img src="./assets/img/img.png" alt="" class="avatar">
+            <h2>HỌC LẬP TRÌNH ĐỂ ĐI LÀM</h2>
+          </div>
+          <h2 class="description">Điện thoại: 0988888999</h2>
+          <h2 class="description">Email: nguyenvandung200201@gmail.com</h2>
+          <h2 class="description">Địa chỉ: Kiến An, Hải Phòng</h2>
+        </div>
+      </div>
+      <div class="list-footer introduce">
+        <div class="item">
+          <h2 class="title">VỀ F8</h2>
+          <h2 class="description">Giới thiệu</h2>
+          <h2 class="description">Cơ hội việc làm</h2>
+          <h2 class="description">Đối tác</h2>
+        </div>
+      </div>
+      <div class="list-footer support">
+        <div class="item">
+          <h2 class="title">HỖ TRỢ</h2>
+          <h2 class="description">Liên hệ</h2>
+          <h2 class="description">Bảo mật</h2>
+          <h2 class="description">Điều khoản</h2>
+        </div>
+      </div>
+      <div class="list-footer support">
+        <div class="item">
+          <h2 class="title">CÔNG TY CỔ PHẦN CÔNG NGHỆ F8</h2>
+          <h2 class="description">Lĩnh vực: Công nghệ, giáo dục, lập trình. F8 xây dựng và phát triển những sản phẩm mạng lại giá trị cho cộng đồng.</h2>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <h1 class="copy-right">© 2018 - 2022 F8. All rights reserved.</h1>
+      <div class="social">
+        <a href="">
+          <i class="fa-brands fa-facebook social-facebook"></i>
+        </a>
+        <a href="">
+          <i class="fa-brands fa-tiktok social-tiktok"></i>
+        </a>
+        <a href="">
+          <i class="fa-brands fa-youtube social-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
